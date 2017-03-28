@@ -13,6 +13,8 @@ namespace ArtificialNeuralNetwork
             LoadData Loading = new LoadData();
             Loading.LoadFromPath();
             Console.ReadKey();
+
+            // Comment to Alexander
         }
     }
 }
