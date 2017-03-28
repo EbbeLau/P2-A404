@@ -5,40 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-
 namespace ArtificialNeuralNetwork
 {
     public class LoadData
     {
         public void LoadFromPath()
         {
-            string path = @"C:\Users\Rasmus\Desktop\Uni\P2\Git\MyTest.txt";
-            try
+            using (var fs = File.OpenRead(@"C:\Users\Rasmus\Desktop\Uni\P2\Git\P2-A404\Data\CSV Files Champion Data\EU 2016 Spring Champion Statistics.csv"))
+            using (var reader = new StreamReader(fs))
             {
-                if (File.Exists(path))
+                List<string> listA = new List<string>();
+                List<string> listB = new List<string>();
+                while (!reader.EndOfStream)
                 {
-                    File.Delete(path);
-                }
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
 
-                using (StreamWriter sw = new StreamWriter(path))
-                {
-                    sw.WriteLine("This");
-                    sw.WriteLine("is some text");
-                    sw.WriteLine("to test");
-                    sw.WriteLine("Reading");
+                    listA.Add(values[0]);
+                    listB.Add(values[1]);
                 }
-
-                using (StreamReader sr = new StreamReader(path))
-                {
-                    while (sr.Peek() >= 0)
-                    {
-                        Console.WriteLine(sr.ReadLine());
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
     }
