@@ -14,7 +14,7 @@ namespace ArtificialNeuralNetwork
         public Neuron toNeuron;
 
         //Constructor
-        public Synapse(Neuron _fromNeuron, Neuron _toNeuron)
+        public Synapse(Neuron _fromNeuron, Neuron _toNeuron, double )
         {
             fromNeuron = _fromNeuron;
             toNeuron = _toNeuron;

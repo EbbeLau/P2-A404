@@ -10,7 +10,7 @@ namespace ArtificialNeuralNetwork
     {
         static void Main(string[] args)
         {
-            
+            NeuralNetwork NN = new NeuralNetwork(new int[4] {2,3,3,2});
         }
     }
 }

@@ -17,7 +17,14 @@ namespace ArtificialNeuralNetwork
         {
             neurons = new Neuron[size];
             nextLayer = _nextLayer;
-            //make better
+            //SYNAPSES ARE FULLY CONNECTED! CHANGE LATER!
+            foreach (Neuron fro in neurons)
+            {
+                foreach (Neuron nex in nextLayer.neurons)
+                {
+                    fro.synapses.Add(new Synapse(fro, nex));
+                }
+            }
         }
     }
 }
