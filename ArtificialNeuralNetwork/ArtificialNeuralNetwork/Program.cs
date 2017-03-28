@@ -15,9 +15,18 @@ namespace ArtificialNeuralNetwork
         public NeuralNetwork (int[] size)
         {
             layers = new Layer[size.Length];
-            for (int i = 0; i < layers.Length; i++)
+            for (int i = layers.Length; i > 0; i--)
             {
-                layers[i] = new Layer(size[i]);
+                Layer nextLayer;
+                if (i == layers.Length)
+                {
+                    nextLayer = null;
+                }
+                else
+                {
+                    nextLayer = layers[i + 1];
+                }
+                layers[i] = new Layer(size[i], nextLayer);
             }
         }
     }
@@ -26,29 +35,41 @@ namespace ArtificialNeuralNetwork
     {
         //Variables
         public Neuron[] neurons;
+        public Layer nextLayer;
 
         //Constructor
-        public Layer (int size)
+        public Layer (int size, Layer _nextLayer)
         {
             neurons = new Neuron[size];
+            nextLayer = _nextLayer;
+            
         }
     }
 
     class Neuron
     {
-
+        public List<Synapse> synapses;
     }
 
     class Synapse
     {
-
+        //Variables
+        public Neuron fromNeuron;
+        public Neuron toNeuron;
+        
+        //Constructor
+        public Synapse(Neuron _fromNeuron, Neuron _toNeuron)
+        {
+            fromNeuron = _fromNeuron;
+            toNeuron = _toNeuron;
+        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }
