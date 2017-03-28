@@ -11,7 +11,7 @@ namespace ArtificialNeuralNetwork
     {
         static void Main(string[] args)
         {
-
+            //do stuff in here...
         }
     }
 }
