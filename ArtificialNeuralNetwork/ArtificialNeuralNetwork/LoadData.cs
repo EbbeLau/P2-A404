@@ -11,21 +11,29 @@ namespace ArtificialNeuralNetwork
     {
         public void LoadFromPath()
         {
-            using (var fs = File.OpenRead(@"C:\Users\Rasmus\Desktop\Uni\P2\Git\P2-A404\Data\CSV Files Champion Data\EU 2016 Spring Champion Statistics.csv"))
-            using (var reader = new StreamReader(fs))
-            {
-                List<string> listA = new List<string>();
-                List<string> listB = new List<string>();
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    var values = line.Split(';');
+            String[] values = File.ReadAllText(@"C:\Users\Rasmus\Desktop\Uni\P2\Git\P2-A404\Data\CSV Files Champion Data\EU 2016 Spring Champion Statistics.csv").Split(',');
 
-                    listA.Add(values[0]);
-                    listB.Add(values[1]);
-                }
+            foreach (var item in values)
+            {
+                Console.WriteLine(item);
             }
         }
     }
 }
+/*
+ using (var fs = File.OpenRead(@"C:\Users\Rasmus\Desktop\Uni\P2\Git\P2-A404\Data\CSV Files Champion Data\EU 2016 Spring Champion Statistics.csv"))
+            using (var reader = new StreamReader(fs))
+            {
+                List<string> listA = new List<string>();
+List<string> listB = new List<string>();
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+var values = line.Split(';');
 
+listA.Add(values[0]);
+                    listB.Add(values[1]);
+                }
+            }
+
+*/
