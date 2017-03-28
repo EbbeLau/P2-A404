@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace ArtificialNeuralNetwork
 {
-    class Program
+    class Neuron
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        public double data;
+        public List<Synapse> synapses;
     }
 }
