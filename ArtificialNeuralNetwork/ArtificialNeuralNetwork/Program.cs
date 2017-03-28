@@ -42,18 +42,20 @@ namespace ArtificialNeuralNetwork
         {
             neurons = new Neuron[size];
             nextLayer = _nextLayer;
-            
+            //make better
         }
     }
 
     class Neuron
     {
+        public double data;
         public List<Synapse> synapses;
     }
 
     class Synapse
     {
         //Variables
+        public double weight;
         public Neuron fromNeuron;
         public Neuron toNeuron;
         
