@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ArtificialNeuralNetwork
 {
+    //test
     class Program
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
