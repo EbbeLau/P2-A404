@@ -10,6 +10,9 @@ namespace ArtificialNeuralNetwork
     {
         static void Main(string[] args)
         {
+            LoadData Loading = new LoadData();
+            Loading.LoadFromPath();
+            Console.ReadKey();
         }
     }
 }
