@@ -10,19 +10,25 @@ namespace ArtificialNeuralNetwork
     {
         //Variables
         public Neuron[] neurons;
-        public Layer nextLayer;
 
         //Constructor
-        public Layer(int size, Layer _nextLayer)
+        public Layer(int size, Layer nextLayer)
         {
             neurons = new Neuron[size];
-            nextLayer = _nextLayer;
-            //SYNAPSES ARE FULLY CONNECTED! CHANGE LATER!
-            foreach (Neuron fro in neurons)
+            for (int i = 0; i < neurons.Length; i++)
             {
-                foreach (Neuron nex in nextLayer.neurons)
+                neurons[i] = new Neuron();
+            }
+            //SYNAPSES ARE FULLY CONNECTED! CHANGE LATER!
+            if (nextLayer != null)
+            {
+                foreach (Neuron from in neurons)
                 {
-                    fro.synapses.Add(new Synapse(fro, nex));
+                    foreach (Neuron next in nextLayer.neurons)
+                    {
+                        from.outgoingSynapses.Add(new Synapse(from, next, 1));
+                        next.ingoingSynapses.Add(new Synapse(from, next, 1));
+                    }
                 }
             }
         }

@@ -14,10 +14,11 @@ namespace ArtificialNeuralNetwork
         public Neuron toNeuron;
 
         //Constructor
-        public Synapse(Neuron _fromNeuron, Neuron _toNeuron, double )
+        public Synapse(Neuron _fromNeuron, Neuron _toNeuron, double _weight)
         {
             fromNeuron = _fromNeuron;
             toNeuron = _toNeuron;
+            weight = _weight;
         }
     }
 }

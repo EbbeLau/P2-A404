@@ -8,7 +8,19 @@ namespace ArtificialNeuralNetwork
 {
     class Neuron
     {
-        public double data;
-        public List<Synapse> synapses;
+        public Neuron (ActivationFunction AF, OutputFunction OF)
+        {
+            
+        }
+        //public double data = 0;
+        
+        public List<Synapse> ingoingSynapses;
+        public List<Synapse> outgoingSynapses;
+
+        public double TransferFunction (double[] Data, double[] weights)
+        {
+            return Outputfunktion(ActivationFunction());
+        }
+
     }
 }

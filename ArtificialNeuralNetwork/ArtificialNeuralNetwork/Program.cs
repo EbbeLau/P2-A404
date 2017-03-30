@@ -10,7 +10,32 @@ namespace ArtificialNeuralNetwork
     {
         static void Main(string[] args)
         {
-            NeuralNetwork NN = new NeuralNetwork(new int[4] {2,3,3,2});
+            Functions allFunc = new Functions();
+
+            NeuralNetwork NN = new NeuralNetwork(new int[4] { 2, 3, 3, 2 }, Functions);
         }
     }
+
+    class Functions
+    {
+        public static void AF1()
+        {
+            
+        }
+        public static void AF2()
+        {
+            
+        }
+        public static void OF1()
+        {
+            
+        }
+        public static void OF2()
+        {
+            
+        }
+    }
+
+    public delegate double ActivationFunction(double[] Data, double[] weights);
+    public delegate double OutputFunction(double Zum);
 }
