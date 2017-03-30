@@ -36,4 +36,16 @@ listA.Add(values[0]);
                 }
             }
 
+    string[] allLines = File.ReadAllLines(@"E:\Temp\data.csv");
+
+    var query = from line in allLines
+                let data = line.Split(',')
+                select new
+                {
+                    Device = data[0],
+                    SignalStrength = data[1],
+                    Location = data[2], 
+                    Time = data[3],
+                    Age = Convert.ToInt16(data[4])
+                };
 */
