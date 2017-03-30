@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Uno
 {
-    class Program
+    class Card
     {
-        static void Main(string[] args)
-        {
-            
-        }
     }
 }
