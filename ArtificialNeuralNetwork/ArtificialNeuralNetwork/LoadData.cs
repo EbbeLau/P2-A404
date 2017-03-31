@@ -11,41 +11,35 @@ namespace ArtificialNeuralNetwork
     {
         public void LoadFromPath()
         {
-            String[] values = File.ReadAllText(@"C:\Users\Rasmus\Desktop\Uni\P2\Git\P2-A404\Data\CSV Files Champion Data\EU 2016 Spring Champion Statistics.csv").Split(',');
+            List<string> ListOfChampions = new List<string>();
+            List<string> NumberOfBans = new List<string>();
+            List<string> Games  = new List<string>();
+            List<string> Wins= new List<string>();
+            List<string> Losses = new List<string>();
+            List<string> Winrate = new List<string>();
 
-            foreach (var item in values)
+            using (var directory = File.OpenRead(@"C:\Users\Rasmus\Desktop\Uni\P2\Git\P2-A404\Data\Champion_Data\EU 2016 Spring Champion Statistics.csv"))
+            using (var reader = new StreamReader(directory))
             {
-                Console.WriteLine(item);
-            }
-        }
-    }
-}
-/*
- using (var fs = File.OpenRead(@"C:\Users\Rasmus\Desktop\Uni\P2\Git\P2-A404\Data\CSV Files Champion Data\EU 2016 Spring Champion Statistics.csv"))
-            using (var reader = new StreamReader(fs))
-            {
-                List<string> listA = new List<string>();
-List<string> listB = new List<string>();
+                
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-var values = line.Split(';');
+                    var values = line.Split(';');
 
-listA.Add(values[0]);
-                    listB.Add(values[1]);
+                    ListOfChampions.Add(values[0]);
+                    NumberOfBans.Add(values[1]);
+                    Games.Add(values[2]);
+                    Wins.Add(values[3]);
+                    Losses.Add(values[4]);
+
                 }
             }
-
-    string[] allLines = File.ReadAllLines(@"E:\Temp\data.csv");
-
-    var query = from line in allLines
-                let data = line.Split(',')
-                select new
-                {
-                    Device = data[0],
-                    SignalStrength = data[1],
-                    Location = data[2], 
-                    Time = data[3],
-                    Age = Convert.ToInt16(data[4])
-                };
-*/
+            foreach (var item in ListOfChampions)
+            {
+                Console.WriteLine(item);
+            }
+            
+        }
+    }
+}
