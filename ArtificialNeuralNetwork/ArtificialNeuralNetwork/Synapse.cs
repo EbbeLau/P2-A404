@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtificialNeuralNetwork
 {
-    class Synapse
+    /*class Synapse
     {
         //Variables
         public double weight;
@@ -20,5 +20,5 @@ namespace ArtificialNeuralNetwork
             toNeuron = _toNeuron;
             weight = _weight;
         }
-    }
+    }*/
 }

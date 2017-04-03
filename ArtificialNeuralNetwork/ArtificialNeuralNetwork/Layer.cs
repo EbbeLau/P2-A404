@@ -8,29 +8,17 @@ namespace ArtificialNeuralNetwork
 {
     class Layer
     {
+        //includes data for neurons and ingoing synapses (weights)
+
         //Variables
-        public Neuron[] neurons;
+        public double[] data;
+        public double[,] weights;
 
         //Constructor
-        public Layer(int size, Layer nextLayer)
+        public Layer(int size, int prevSize)
         {
-            neurons = new Neuron[size];
-            for (int i = 0; i < neurons.Length; i++)
-            {
-                neurons[i] = new Neuron();
-            }
-            //SYNAPSES ARE FULLY CONNECTED! CHANGE LATER!
-            if (nextLayer != null)
-            {
-                foreach (Neuron from in neurons)
-                {
-                    foreach (Neuron next in nextLayer.neurons)
-                    {
-                        from.outgoingSynapses.Add(new Synapse(from, next, 1));
-                        next.ingoingSynapses.Add(new Synapse(from, next, 1));
-                    }
-                }
-            }
+            data = new double[size];
+            weights = new double[prevSize, size];
         }
     }
 }

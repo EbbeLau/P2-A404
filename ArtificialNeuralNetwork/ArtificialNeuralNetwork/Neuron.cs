@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtificialNeuralNetwork
 {
-    class Neuron
+    /*class Neuron
     {
         public Neuron (ActivationFunction AF, OutputFunction OF)
         {
@@ -22,5 +22,5 @@ namespace ArtificialNeuralNetwork
             return Outputfunktion(ActivationFunction());
         }
 
-    }
+    }*/
 }
